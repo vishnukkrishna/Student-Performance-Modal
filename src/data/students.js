@@ -1,11 +1,12 @@
 export const students = [
   {
     id: 1,
-    first_name: "John",
-    last_name: "Doe",
+    first_name: "Vishnu",
+    last_name: "K",
     age: 16,
     gender: "Male",
     address: "123 Elm St, Springfield, IL",
+    class: 10,
     marks: {
       math: 85,
       science: 78,
@@ -30,11 +31,12 @@ export const students = [
   },
   {
     id: 2,
-    first_name: "Emily",
-    last_name: "Smith",
+    first_name: "Swetha",
+    last_name: "K",
     age: 15,
     gender: "Female",
     address: "456 Oak Rd, Lincoln, NE",
+    class: 10,
     marks: {
       math: 92,
       science: 85,
@@ -59,11 +61,12 @@ export const students = [
   },
   {
     id: 3,
-    first_name: "Michael",
-    last_name: "Johnson",
+    first_name: "Pranav",
+    last_name: "PV",
     age: 16,
     gender: "Male",
     address: "789 Pine St, Madison, WI",
+    class: 10,
     marks: {
       math: 75,
       science: 70,
@@ -88,11 +91,12 @@ export const students = [
   },
   {
     id: 4,
-    first_name: "Sophia",
-    last_name: "Williams",
+    first_name: "Priya",
+    last_name: "K",
     age: 15,
     gender: "Female",
     address: "321 Maple Ave, Detroit, MI",
+    class: 10,
     marks: {
       math: 90,
       science: 88,
@@ -117,11 +121,12 @@ export const students = [
   },
   {
     id: 5,
-    first_name: "Lucas",
-    last_name: "Brown",
+    first_name: "Afnas",
+    last_name: "KK",
     age: 16,
     gender: "Male",
     address: "654 Cedar Ln, Phoenix, AZ",
+    class: 10,
     marks: {
       math: 88,
       science: 79,
@@ -146,11 +151,12 @@ export const students = [
   },
   {
     id: 6,
-    first_name: "Ava",
-    last_name: "Davis",
+    first_name: "Akhila",
+    last_name: "P",
     age: 15,
     gender: "Female",
     address: "987 Birch St, Austin, TX",
+    class: 10,
     marks: {
       math: 82,
       science: 91,
@@ -175,11 +181,12 @@ export const students = [
   },
   {
     id: 7,
-    first_name: "James",
-    last_name: "Martinez",
+    first_name: "Shahid",
+    last_name: "KM",
     age: 16,
     gender: "Male",
     address: "111 Willow Dr, Orlando, FL",
+    class: 10,
     marks: {
       math: 79,
       science: 84,
@@ -204,11 +211,12 @@ export const students = [
   },
   {
     id: 8,
-    first_name: "Mia",
-    last_name: "Hernandez",
+    first_name: "Anju",
+    last_name: "K",
     age: 15,
     gender: "Female",
     address: "222 Spruce St, Seattle, WA",
+    class: 10,
     marks: {
       math: 87,
       science: 93,
@@ -233,11 +241,12 @@ export const students = [
   },
   {
     id: 9,
-    first_name: "Ethan",
-    last_name: "Garcia",
+    first_name: "Shifan",
+    last_name: "P",
     age: 16,
     gender: "Male",
     address: "333 Fir St, New York, NY",
+    class: 10,
     marks: {
       math: 92,
       science: 88,
@@ -262,11 +271,12 @@ export const students = [
   },
   {
     id: 10,
-    first_name: "Olivia",
-    last_name: "Lopez",
+    first_name: "Anjana",
+    last_name: "K",
     age: 15,
     gender: "Female",
     address: "555 Cherry Blvd, San Diego, CA",
+    class: 10,
     marks: {
       math: 85,
       science: 91,
