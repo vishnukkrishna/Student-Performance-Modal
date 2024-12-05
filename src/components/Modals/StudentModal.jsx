@@ -279,7 +279,6 @@ const StudentModal = ({ student, isOpen, closeModal }) => {
           </motion.div>
 
           {/* Overall Performance Section */}
-          {/* Overall Performance Section */}
           <motion.div
             className="bg-[#adb3b9] rounded-[8px] p-6 flex-col items-center md:block hidden"
             variants={{
