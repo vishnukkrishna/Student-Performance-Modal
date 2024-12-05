@@ -6,7 +6,7 @@ const StudentCard = ({ student, itemVariants, buttonVariants, openModal }) => {
   return (
     <motion.div
       key={student.id}
-      className="relative flex flex-col rounded-lg bg-white mb-6 shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl"
+      className="relative flex flex-col rounded-lg bg-white mb-6 shadow-2xl p-6 hover:shadow-2xl hover:scale-[2.04] hover:rotate-1 hover:bg-gray-50 transition-all duration-700 ease-in-out"
       variants={itemVariants}
     >
       {/* Student Image */}
@@ -52,7 +52,7 @@ const StudentCard = ({ student, itemVariants, buttonVariants, openModal }) => {
         {/* Button to open the student details modal */}
         <div className="mt-4">
           <motion.button
-            className="group relative h-12 w-48 overflow-hidden rounded-2xl bg-[#334151] text-lg font-bold text-white"
+            className="group relative h-10 w-36 overflow-hidden rounded-2xl bg-[#334151] text-lg font-bold text-white"
             variants={buttonVariants}
             onClick={() => openModal(student)}
             whileHover="hover"
