@@ -8,10 +8,13 @@ export const students = [
     address: "123 Elm St, Springfield, IL",
     class: 10,
     marks: {
-      math: 85,
-      science: 78,
-      english: 92,
-      history: 80,
+      math: 92,
+      chemistry: 85,
+      english: 88,
+      history: 90,
+      biology: 92,
+      malayalam: 99,
+      hindi: 88,
     },
     attendance: {
       January: "90%",
@@ -28,6 +31,57 @@ export const students = [
       May: "90%",
     },
     image: "https://randomuser.me/api/portraits/men/1.jpg",
+    extracurricular: {
+      sports: "Football",
+      clubs: ["Science Club", "Debate Club"],
+      hobbies: ["Reading", "Photography", "Music"],
+    },
+    favorite_subjects: ["Math", "Biology", "History"],
+    achievements: [
+      {
+        title: "Science Fair Winner",
+        year: 2023,
+        description:
+          "First place in the school Science Fair for a chemistry project.",
+      },
+      {
+        title: "Football Team Captain",
+        year: 2024,
+        description: "Led the school's football team to regional finals.",
+      },
+    ],
+    parental_information: {
+      father: {
+        name: "Krishnakumar",
+        occupation: "Software Engineer",
+        contact: "+1 555-1234",
+      },
+      mother: {
+        name: "Vanaja K",
+        occupation: "Teacher",
+        contact: "+1 555-5678",
+      },
+    },
+    emergency_contact: {
+      name: "Krishnakumar",
+      relation: "Uncle",
+      contact: "+1 555-9876",
+    },
+    health_info: {
+      blood_group: "B+",
+      allergies: ["Peanuts", "Dust"],
+      special_needs: "None",
+    },
+    behavior_report: {
+      strengths: ["Hardworking", "Team Player", "Disciplined"],
+      areas_of_improvement: ["Time Management", "Stress Management"],
+    },
+    school_details: {
+      name: "Springfield High School",
+      grade: "A",
+      school_year: "2023-2024",
+      principal: "Mr. Robert Johnson",
+    },
   },
   {
     id: 2,
@@ -38,10 +92,13 @@ export const students = [
     address: "456 Oak Rd, Lincoln, NE",
     class: 10,
     marks: {
-      math: 92,
-      science: 85,
-      english: 88,
-      history: 90,
+      math: 90,
+      chemistry: 80,
+      english: 78,
+      history: 80,
+      biology: 97,
+      malayalam: 96,
+      hindi: 80,
     },
     attendance: {
       January: "95%",
@@ -58,20 +115,68 @@ export const students = [
       May: "89%",
     },
     image: "https://randomuser.me/api/portraits/women/2.jpg",
+    extracurricular: {
+      sports: "Basketball",
+      clubs: ["Drama Club", "Math Club"],
+      hobbies: ["Painting", "Cooking", "Traveling"],
+    },
+    favorite_subjects: ["Chemistry", "Biology", "English"],
+    achievements: [
+      {
+        title: "Math Olympiad Runner-Up",
+        year: 2023,
+        description: "Secured 2nd place in the National Math Olympiad.",
+      },
+    ],
+    parental_information: {
+      father: {
+        name: "Naveen K",
+        occupation: "Doctor",
+        contact: "+1 555-2345",
+      },
+      mother: {
+        name: "Shalini K",
+        occupation: "Nurse",
+        contact: "+1 555-6789",
+      },
+    },
+    emergency_contact: {
+      name: "Rani Nair",
+      relation: "Aunt",
+      contact: "+1 555-8765",
+    },
+    health_info: {
+      blood_group: "O+",
+      allergies: ["None"],
+      special_needs: "None",
+    },
+    behavior_report: {
+      strengths: ["Creative", "Analytical", "Patient"],
+      areas_of_improvement: ["Public Speaking"],
+    },
+    school_details: {
+      name: "Lincoln High School",
+      grade: "B",
+      school_year: "2023-2024",
+      principal: "Mr. John Doe",
+    },
   },
   {
     id: 3,
     first_name: "Pranav",
-    last_name: "PV",
+    last_name: "TV",
     age: 16,
     gender: "Male",
     address: "789 Pine St, Madison, WI",
     class: 10,
     marks: {
-      math: 75,
-      science: 70,
-      english: 80,
-      history: 78,
+      math: 82,
+      chemistry: 87,
+      english: 78,
+      history: 91,
+      biology: 84,
+      malayalam: 92,
+      hindi: 80,
     },
     attendance: {
       January: "88%",
@@ -88,6 +193,52 @@ export const students = [
       May: "78%",
     },
     image: "https://randomuser.me/api/portraits/men/3.jpg",
+    extracurricular: {
+      sports: "Cricket",
+      clubs: ["Drama Club", "Tech Club"],
+      hobbies: ["Drawing", "Chess", "Reading"],
+    },
+    favorite_subjects: ["History", "English", "Biology"],
+    achievements: [
+      {
+        title: "Regional Cricket Champion",
+        year: 2023,
+        description:
+          "Led the cricket team to victory in the regional championship.",
+      },
+    ],
+    parental_information: {
+      father: {
+        name: "Vijay PV",
+        occupation: "Entrepreneur",
+        contact: "+1 555-3456",
+      },
+      mother: {
+        name: "Geetha PV",
+        occupation: "Lawyer",
+        contact: "+1 555-7890",
+      },
+    },
+    emergency_contact: {
+      name: "Sandeep PV",
+      relation: "Uncle",
+      contact: "+1 555-2345",
+    },
+    health_info: {
+      blood_group: "A-",
+      allergies: ["Dust"],
+      special_needs: "None",
+    },
+    behavior_report: {
+      strengths: ["Leadership", "Strategic Thinking", "Creative"],
+      areas_of_improvement: ["Math", "Focus"],
+    },
+    school_details: {
+      name: "Madison High School",
+      grade: "B+",
+      school_year: "2023-2024",
+      principal: "Mr. Mark Robinson",
+    },
   },
   {
     id: 4,
@@ -98,10 +249,13 @@ export const students = [
     address: "321 Maple Ave, Detroit, MI",
     class: 10,
     marks: {
-      math: 90,
-      science: 88,
-      english: 85,
-      history: 92,
+      math: 92,
+      chemistry: 85,
+      english: 88,
+      history: 90,
+      biology: 92,
+      malayalam: 99,
+      hindi: 88,
     },
     attendance: {
       January: "96%",
@@ -118,6 +272,51 @@ export const students = [
       May: "94%",
     },
     image: "https://randomuser.me/api/portraits/women/4.jpg",
+    extracurricular: {
+      sports: "Tennis",
+      clubs: ["Math Club", "Art Club"],
+      hobbies: ["Writing", "Cycling", "Photography"],
+    },
+    favorite_subjects: ["Math", "English", "Chemistry"],
+    achievements: [
+      {
+        title: "School Tennis Champion",
+        year: 2023,
+        description: "Won the school tennis championship in singles.",
+      },
+    ],
+    parental_information: {
+      father: {
+        name: "Krishnakumar",
+        occupation: "Businessman",
+        contact: "+1 555-4567",
+      },
+      mother: {
+        name: "Vanaja K",
+        occupation: "Doctor",
+        contact: "+1 555-8901",
+      },
+    },
+    emergency_contact: {
+      name: "Neha R",
+      relation: "Aunt",
+      contact: "+1 555-5678",
+    },
+    health_info: {
+      blood_group: "O-",
+      allergies: ["None"],
+      special_needs: "None",
+    },
+    behavior_report: {
+      strengths: ["Organized", "Athletic", "Diligent"],
+      areas_of_improvement: ["Artistic Expression"],
+    },
+    school_details: {
+      name: "Detroit High School",
+      grade: "A-",
+      school_year: "2023-2024",
+      principal: "Mrs. Linda Clark",
+    },
   },
   {
     id: 5,
@@ -125,29 +324,78 @@ export const students = [
     last_name: "KK",
     age: 16,
     gender: "Male",
-    address: "654 Cedar Ln, Phoenix, AZ",
+    address: "654 Birch Rd, Boston, MA",
     class: 10,
     marks: {
-      math: 88,
-      science: 79,
-      english: 82,
-      history: 85,
+      math: 85,
+      chemistry: 80,
+      english: 86,
+      history: 89,
+      biology: 91,
+      malayalam: 94,
+      hindi: 85,
     },
     attendance: {
-      January: "89%",
-      February: "83%",
-      March: "87%",
-      April: "90%",
+      January: "91%",
+      February: "92%",
+      March: "90%",
+      April: "93%",
       May: "91%",
     },
     activity_progress: {
-      January: "65%",
-      February: "70%",
-      March: "75%",
-      April: "80%",
-      May: "83%",
+      January: "75%",
+      February: "80%",
+      March: "82%",
+      April: "84%",
+      May: "86%",
     },
     image: "https://randomuser.me/api/portraits/men/5.jpg",
+    extracurricular: {
+      sports: "Basketball",
+      clubs: ["Drama Club", "Science Club"],
+      hobbies: ["Reading", "Cycling", "Traveling"],
+    },
+    favorite_subjects: ["Math", "English", "History"],
+    achievements: [
+      {
+        title: "Science Quiz Winner",
+        year: 2023,
+        description:
+          "Won first place in the regional Science Quiz competition.",
+      },
+    ],
+    parental_information: {
+      father: {
+        name: "Shankar S",
+        occupation: "Accountant",
+        contact: "+1 555-5678",
+      },
+      mother: {
+        name: "Anjali S",
+        occupation: "Teacher",
+        contact: "+1 555-8902",
+      },
+    },
+    emergency_contact: {
+      name: "Kiran S",
+      relation: "Brother",
+      contact: "+1 555-4568",
+    },
+    health_info: {
+      blood_group: "AB+",
+      allergies: ["None"],
+      special_needs: "None",
+    },
+    behavior_report: {
+      strengths: ["Hardworking", "Creative", "Supportive"],
+      areas_of_improvement: ["Social Skills"],
+    },
+    school_details: {
+      name: "Boston High School",
+      grade: "A",
+      school_year: "2023-2024",
+      principal: "Mr. Jonathan Turner",
+    },
   },
   {
     id: 6,
@@ -158,10 +406,13 @@ export const students = [
     address: "987 Birch St, Austin, TX",
     class: 10,
     marks: {
-      math: 82,
-      science: 91,
-      english: 78,
-      history: 80,
+      math: 92,
+      chemistry: 85,
+      english: 88,
+      history: 90,
+      biology: 92,
+      malayalam: 99,
+      hindi: 88,
     },
     attendance: {
       January: "92%",
@@ -178,6 +429,52 @@ export const students = [
       May: "90%",
     },
     image: "https://randomuser.me/api/portraits/women/6.jpg",
+    extracurricular: {
+      sports: "Volleyball",
+      clubs: ["Science Club", "Book Club"],
+      hobbies: ["Writing", "Art", "Reading"],
+    },
+    favorite_subjects: ["Science", "English", "History"],
+    achievements: [
+      {
+        title: "Inter-School Science Quiz Winner",
+        year: 2023,
+        description:
+          "Won the first place in the inter-school science quiz competition.",
+      },
+    ],
+    parental_information: {
+      father: {
+        name: "Suresh P",
+        occupation: "Engineer",
+        contact: "+1 555-3456",
+      },
+      mother: {
+        name: "Rani P",
+        occupation: "Nurse",
+        contact: "+1 555-7891",
+      },
+    },
+    emergency_contact: {
+      name: "Meera P",
+      relation: "Aunt",
+      contact: "+1 555-2345",
+    },
+    health_info: {
+      blood_group: "A+",
+      allergies: ["None"],
+      special_needs: "None",
+    },
+    behavior_report: {
+      strengths: ["Creative", "Focused", "Respectful"],
+      areas_of_improvement: ["Teamwork", "Public Speaking"],
+    },
+    school_details: {
+      name: "Austin High School",
+      grade: "A",
+      school_year: "2023-2024",
+      principal: "Mr. Samuel Green",
+    },
   },
   {
     id: 7,
@@ -188,10 +485,13 @@ export const students = [
     address: "111 Willow Dr, Orlando, FL",
     class: 10,
     marks: {
-      math: 79,
-      science: 84,
-      english: 91,
-      history: 86,
+      math: 92,
+      chemistry: 85,
+      english: 88,
+      history: 90,
+      biology: 92,
+      malayalam: 99,
+      hindi: 88,
     },
     attendance: {
       January: "85%",
@@ -208,6 +508,52 @@ export const students = [
       May: "80%",
     },
     image: "https://randomuser.me/api/portraits/men/7.jpg",
+    extracurricular: {
+      sports: "Football",
+      clubs: ["Tech Club", "Debate Club"],
+      hobbies: ["Music", "Photography", "Cycling"],
+    },
+    favorite_subjects: ["Math", "Physics", "History"],
+    achievements: [
+      {
+        title: "Best Debater Award",
+        year: 2023,
+        description:
+          "Won the Best Debater Award in the school debate competition.",
+      },
+    ],
+    parental_information: {
+      father: {
+        name: "Arun KM",
+        occupation: "Business Analyst",
+        contact: "+1 555-6789",
+      },
+      mother: {
+        name: "Lakshmi KM",
+        occupation: "Professor",
+        contact: "+1 555-1234",
+      },
+    },
+    emergency_contact: {
+      name: "Ravi KM",
+      relation: "Uncle",
+      contact: "+1 555-5678",
+    },
+    health_info: {
+      blood_group: "O+",
+      allergies: ["Peanuts"],
+      special_needs: "None",
+    },
+    behavior_report: {
+      strengths: ["Articulate", "Hardworking", "Team Leader"],
+      areas_of_improvement: ["Consistency", "Stress Management"],
+    },
+    school_details: {
+      name: "Orlando High School",
+      grade: "B+",
+      school_year: "2023-2024",
+      principal: "Mrs. Elena Lopez",
+    },
   },
   {
     id: 8,
@@ -218,10 +564,13 @@ export const students = [
     address: "222 Spruce St, Seattle, WA",
     class: 10,
     marks: {
-      math: 87,
-      science: 93,
-      english: 86,
-      history: 88,
+      math: 92,
+      chemistry: 85,
+      english: 88,
+      history: 90,
+      biology: 92,
+      malayalam: 99,
+      hindi: 88,
     },
     attendance: {
       January: "91%",
@@ -238,6 +587,52 @@ export const students = [
       May: "90%",
     },
     image: "https://randomuser.me/api/portraits/women/8.jpg",
+    extracurricular: {
+      sports: "Badminton",
+      clubs: ["Drama Club", "Photography Club"],
+      hobbies: ["Writing", "Reading", "Baking"],
+    },
+    favorite_subjects: ["English", "Math", "Chemistry"],
+    achievements: [
+      {
+        title: "Best Actress Award",
+        year: 2023,
+        description:
+          "Won the Best Actress Award in the school drama production.",
+      },
+    ],
+    parental_information: {
+      father: {
+        name: "Ramesh K",
+        occupation: "Software Developer",
+        contact: "+1 555-2345",
+      },
+      mother: {
+        name: "Neetha K",
+        occupation: "Teacher",
+        contact: "+1 555-6789",
+      },
+    },
+    emergency_contact: {
+      name: "Rajesh K",
+      relation: "Grandfather",
+      contact: "+1 555-4567",
+    },
+    health_info: {
+      blood_group: "B-",
+      allergies: ["Dust", "Eggs"],
+      special_needs: "None",
+    },
+    behavior_report: {
+      strengths: ["Creative", "Empathetic", "Focused"],
+      areas_of_improvement: ["Time Management", "Self-Motivation"],
+    },
+    school_details: {
+      name: "Seattle High School",
+      grade: "A",
+      school_year: "2023-2024",
+      principal: "Mr. Derek Smith",
+    },
   },
   {
     id: 9,
@@ -249,9 +644,12 @@ export const students = [
     class: 10,
     marks: {
       math: 92,
-      science: 88,
-      english: 90,
-      history: 94,
+      chemistry: 85,
+      english: 88,
+      history: 90,
+      biology: 92,
+      malayalam: 99,
+      hindi: 88,
     },
     attendance: {
       January: "95%",
@@ -268,6 +666,52 @@ export const students = [
       May: "94%",
     },
     image: "https://randomuser.me/api/portraits/men/9.jpg",
+    extracurricular: {
+      sports: "Basketball",
+      clubs: ["Coding Club", "Music Club"],
+      hobbies: ["Gaming", "Music", "Reading"],
+    },
+    favorite_subjects: ["Math", "Physics", "Computer Science"],
+    achievements: [
+      {
+        title: "Regional Basketball Championship Winner",
+        year: 2023,
+        description:
+          "Won the Regional Basketball Championship with the school's team.",
+      },
+    ],
+    parental_information: {
+      father: {
+        name: "Ajay P",
+        occupation: "Architect",
+        contact: "+1 555-3456",
+      },
+      mother: {
+        name: "Anjali P",
+        occupation: "Doctor",
+        contact: "+1 555-7892",
+      },
+    },
+    emergency_contact: {
+      name: "Gaurav P",
+      relation: "Brother",
+      contact: "+1 555-5678",
+    },
+    health_info: {
+      blood_group: "AB+",
+      allergies: ["None"],
+      special_needs: "None",
+    },
+    behavior_report: {
+      strengths: ["Teamwork", "Problem-Solving", "Leadership"],
+      areas_of_improvement: ["Public Speaking"],
+    },
+    school_details: {
+      name: "New York High School",
+      grade: "A+",
+      school_year: "2023-2024",
+      principal: "Mr. Alan Williams",
+    },
   },
   {
     id: 10,
@@ -278,10 +722,13 @@ export const students = [
     address: "555 Cherry Blvd, San Diego, CA",
     class: 10,
     marks: {
-      math: 85,
-      science: 91,
-      english: 89,
+      math: 92,
+      chemistry: 85,
+      english: 88,
       history: 90,
+      biology: 92,
+      malayalam: 99,
+      hindi: 88,
     },
     attendance: {
       January: "90%",
@@ -298,5 +745,51 @@ export const students = [
       May: "85%",
     },
     image: "https://randomuser.me/api/portraits/women/10.jpg",
+    extracurricular: {
+      sports: "Swimming",
+      clubs: ["Art Club", "Literary Club"],
+      hobbies: ["Painting", "Poetry", "Yoga"],
+    },
+    favorite_subjects: ["Art", "History", "English"],
+    achievements: [
+      {
+        title: "Best Painter Award",
+        year: 2023,
+        description:
+          "Won the Best Painter Award in the school's annual art competition.",
+      },
+    ],
+    parental_information: {
+      father: {
+        name: "Manoj K",
+        occupation: "Business Owner",
+        contact: "+1 555-4321",
+      },
+      mother: {
+        name: "Geetha K",
+        occupation: "Professor",
+        contact: "+1 555-8765",
+      },
+    },
+    emergency_contact: {
+      name: "Ramesh K",
+      relation: "Grandfather",
+      contact: "+1 555-6543",
+    },
+    health_info: {
+      blood_group: "O+",
+      allergies: ["None"],
+      special_needs: "None",
+    },
+    behavior_report: {
+      strengths: ["Creative", "Diligent", "Helpful"],
+      areas_of_improvement: ["Confidence", "Time Management"],
+    },
+    school_details: {
+      name: "San Diego High School",
+      grade: "A",
+      school_year: "2023-2024",
+      principal: "Dr. Brian Hartman",
+    },
   },
 ];

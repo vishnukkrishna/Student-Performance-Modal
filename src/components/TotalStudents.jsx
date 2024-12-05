@@ -1,25 +1,30 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { CiSearch } from "react-icons/ci";
-import { students } from "../data/students";
-import StudentModal from "./Modals/StudentModal";
+import { students } from "../data/students"; // Assuming students data is imported from a separate file
+import StudentModal from "./Modals/StudentModal"; // Modal component to show student details
 import headerimg from "../assets/student.png";
+import StudentCard from "./StudentCard";
 
 const TotalStudents = () => {
+  // State hooks for handling the selected student, search query, and modal state
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Function to open the modal and display details of a selected student
   const openModal = (student) => {
     setSelectedStudent(student);
     setIsModalOpen(true);
   };
 
+  // Function to close the modal
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedStudent(null);
   };
 
+  // Get the current date to display in the header section
   const currentDate = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
@@ -27,14 +32,14 @@ const TotalStudents = () => {
     day: "numeric",
   });
 
-  // Filter students based on search
+  // Filter students based on the search query (case-insensitive)
   const filteredStudents = students.filter((student) =>
     `${student.first_name} ${student.last_name}`
       .toLowerCase()
       .includes(searchQuery.toLowerCase())
   );
 
-  // Animation Variants
+  // Animation variants for the motion components
   const containerVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -66,9 +71,10 @@ const TotalStudents = () => {
         >
           {/* Left Section: Text Content */}
           <div className="flex flex-col items-center sm:items-start space-y-4 max-w-xl w-full text-center sm:text-left">
-            <p className="text-sm text-gray-100">{currentDate}</p>
+            <p className="text-sm text-gray-100">{currentDate}</p>{" "}
+            {/* Display current date */}
             <h1 className="text-4xl font-extrabold text-gray-100 tracking-tight leading-tight">
-              Welcome Back! Explore Student Details
+              Welcome<span className="mx-2">Back!</span> Explore Student Details
             </h1>
             <p className="text-lg text-gray-100">
               Track attendance, grades, and performance easily in the portal.
@@ -108,7 +114,7 @@ const TotalStudents = () => {
                 type="submit"
                 className="rounded-full bg-transparent px-2 py-1"
               >
-                <CiSearch size={22} />
+                <CiSearch size={22} /> {/* Search icon */}
               </button>
             </div>
           </motion.div>
@@ -121,6 +127,7 @@ const TotalStudents = () => {
           initial="hidden"
           animate="visible"
         >
+          {/* Check if there are any filtered students */}
           {filteredStudents.length > 0 ? (
             filteredStudents.map((student, index) => (
               <StudentCard
@@ -138,76 +145,19 @@ const TotalStudents = () => {
           )}
         </motion.div>
       </div>
+
+      {/* Render the modal if it's open */}
       <div className="w-full">
         {isModalOpen && (
           <StudentModal
             student={selectedStudent}
             isOpen={isModalOpen}
-            closeModal={closeModal}
+            closeModal={closeModal} // Close modal function
           />
         )}
       </div>
     </div>
   );
 };
-
-const StudentCard = ({ student, itemVariants, buttonVariants, openModal }) => (
-  <motion.div
-    key={student.id}
-    className="relative flex flex-col rounded-lg bg-white mb-6 shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl"
-    variants={itemVariants}
-  >
-    {/* Student Image */}
-    <div className="relative w-full flex justify-center">
-      <img
-        src={student.image}
-        className="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"
-        alt={`${student.first_name} ${student.last_name}`}
-      />
-    </div>
-
-    {/* Student Information */}
-    <div className="mt-20 text-center">
-      <h3 className="text-2xl text-slate-700 font-bold leading-normal">
-        {`${student.first_name} ${student.last_name}`}
-      </h3>
-      <p className="text-gray-500 text-sm">{student.class}th</p>
-      <div className="w-full text-center">
-        <div className="flex justify-center lg:pt-4 pt-2 pb-0">
-          <div className="p-3 text-center">
-            <span className="text-xl font-bold block uppercase tracking-wide text-slate-700">
-              {student.attendance.May}
-            </span>
-            <span className="text-sm text-slate-400">Attendance</span>
-          </div>
-          <div className="p-3 text-center">
-            <span className="text-xl font-bold block uppercase tracking-wide text-slate-700">
-              {student.marks.math}
-            </span>
-            <span className="text-sm text-slate-400">Marks</span>
-          </div>
-          <div className="p-3 text-center">
-            <span className="text-xl font-bold block uppercase tracking-wide text-slate-700">
-              {student.activity_progress.May}
-            </span>
-            <span className="text-sm text-slate-400">Performance</span>
-          </div>
-        </div>
-      </div>
-      <div className="mt-4">
-        <motion.button
-          className="group relative h-12 w-48 overflow-hidden rounded-2xl bg-[#334151] text-lg font-bold text-white"
-          variants={buttonVariants}
-          onClick={() => openModal(student)}
-          whileHover="hover"
-          whileTap="tap"
-        >
-          View Details
-          <div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
-        </motion.button>
-      </div>
-    </div>
-  </motion.div>
-);
 
 export default TotalStudents;
