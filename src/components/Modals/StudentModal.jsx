@@ -3,8 +3,6 @@ import { SlClose } from "react-icons/sl";
 import { motion } from "framer-motion";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-
-// Registering necessary Chart.js components
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -17,6 +15,7 @@ import {
 } from "chart.js";
 import PieChart from "../Charts/PieChart";
 import BarChart from "../Charts/BarChart";
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -168,7 +167,7 @@ const StudentModal = ({ student, isOpen, closeModal }) => {
 
   return (
     <motion.div
-      className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center w-screen z-50"
+      className="fixed inset-0 bg-gray-900 bg-opacity-60 flex justify-center items-center w-screen z-50 max-h-screen overflow-y-auto"
       initial="hidden"
       animate="visible"
       exit="exit"
@@ -185,24 +184,54 @@ const StudentModal = ({ student, isOpen, closeModal }) => {
           <SlClose className="w-6 h-6" />
         </button>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr,30%] gap-[15px]">
+        {/* Main Grid Layout for Student Info */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-[1fr,40%] gap-[15px]"
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+        >
           {/* Student Info Section */}
-          <div className="flex flex-col md:flex-row gap-[30px] bg-[#A5AEA6] rounded-[12px] p-[10px]">
-            <div className="flex flex-shrink-0 justify-center items-center mb-4 md:mb-0">
+          <motion.div
+            className="flex flex-col md:flex-row bg-[#adb3b9] rounded-[12px] p-[10px]"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { duration: 0.5 } },
+            }}
+          >
+            {/* Student Image */}
+            <div className="flex justify-center items-center mb-0 md:mb-0 md:w-1/3">
               <img
-                src={student?.image}
+                src={student?.image || "https://via.placeholder.com/150"}
                 alt="Student Image"
-                className="rounded-full w-[150px] h-[150px] object-cover mx-auto md:mx-0"
+                className="rounded-full w-[80px] h-[80px] sm:w-[150px] sm:h-[150px] md:w-[150px] md:h-[150px] object-cover mx-auto md:mx-0 shadow-lg border-4 border-white"
               />
             </div>
-            <div className="flex flex-col w-full justify-between gap-[2px]">
-              <div className="p-4">
-                <h2 className="font-bold text-lg uppercase text-center md:text-left">
+
+            {/* Student Info */}
+            <div className="flex flex-col pt-0 sm:pt-4 md:pt-4 w-full gap-[2px] md:w-2/3">
+              <div className="p-2 text-sm sm:text-base md:text-base">
+                <h2 className="font-bold text-base sm:text-lg md:text-lg uppercase text-center md:text-left">
                   {student?.first_name} {student?.last_name}
                 </h2>
-                {/* Student Info */}
-                <div className="flex flex-col md:flex-row mt-1 sm:mt-4 lg:mt-4">
-                  <div className="flex flex-col w-full md:w-1/2">
+                {/* Student Details */}
+                <motion.div
+                  className="flex flex-col sm:flex-row sm:justify-start items-center sm:items-center mt-0 sm:mt-4 lg:mt-4"
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1, transition: { duration: 0.4 } },
+                  }}
+                >
+                  {/* Student Info Section */}
+                  <div className="flex flex-col w-full sm:w-1/2 sm:ml-auto">
                     <p className="text-gray-800">
                       Age:{" "}
                       <span className="font-semibold text-gray-900">
@@ -218,11 +247,13 @@ const StudentModal = ({ student, isOpen, closeModal }) => {
                     <p className="text-gray-800">
                       Class:{" "}
                       <span className="font-semibold text-gray-900">
-                        {student?.class}
+                        {student?.class}th
                       </span>
                     </p>
                   </div>
-                  <div className="flex flex-col w-full md:w-1/2">
+
+                  {/* Parent Info Section */}
+                  <div className="flex flex-col w-full sm:w-1/2 sm:ml-auto">
                     <p className="text-gray-800">
                       Father name:{" "}
                       <span className="font-semibold text-gray-900">
@@ -242,30 +273,20 @@ const StudentModal = ({ student, isOpen, closeModal }) => {
                       </span>
                     </p>
                   </div>
-                </div>
-              </div>
-              {/* Buttons for Certificate and Score Card */}
-              <div className="flex flex-row gap-[10px] mt-1 justify-around">
-                <motion.button
-                  className="group relative h-10 w-32 overflow-hidden rounded-2xl bg-[#334151] text-base font-bold text-white"
-                  whileHover="hover"
-                  whileTap="tap"
-                >
-                  Certificate
-                </motion.button>
-                <motion.button
-                  className="group relative h-10 w-32 overflow-hidden rounded-2xl bg-[#334151] text-base font-bold text-white"
-                  whileHover="hover"
-                  whileTap="tap"
-                >
-                  Score Card
-                </motion.button>
+                </motion.div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Overall Performance Section */}
-          <div className="bg-[#A5AEA6] rounded-[8px] p-6 flex flex-col items-center">
+          {/* Overall Performance Section */}
+          <motion.div
+            className="bg-[#adb3b9] rounded-[8px] p-6 flex-col items-center md:block hidden"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { duration: 0.5 } },
+            }}
+          >
             <h3 className="font-bold text-lg text-center mb-4">
               Overall Performance
             </h3>
@@ -310,17 +331,30 @@ const StudentModal = ({ student, isOpen, closeModal }) => {
                 <h2 className="text-sm font-semibold mt-2">Marks</h2>
               </motion.div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Charts Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[15px]">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 gap-[15px]"
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { staggerChildren: 0.3 },
+            },
+          }}
+        >
           {/* Pie Chart */}
           <PieChart data={pieData} options={pieOptions} />
 
           {/* Bar Chart */}
           <BarChart data={barData} options={barOptions} />
-        </div>
+        </motion.div>
       </motion.div>
     </motion.div>
   );
