@@ -64,7 +64,7 @@ const TotalStudents = () => {
       <div className="container mx-auto">
         {/* Header Section */}
         <motion.div
-          className="bg-gradient-to-r bg-[#334151] to-blue-50 text-gray-800 p-8 rounded-xl shadow-xl flex flex-col sm:flex-row items-center sm:justify-between mb-8 gap-6"
+          className="bg-gradient-to-r bg-[#334151] to-blue-50 text-gray-800 p-8 rounded-xl shadow-xl flex flex-col sm:flex-col md:flex-col lg:flex-row items-center sm:justify-between mb-8 gap-6"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
