@@ -1,7 +1,6 @@
 import React from "react";
 import { SlClose } from "react-icons/sl";
 import { motion } from "framer-motion";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import {
   Chart as ChartJS,
@@ -15,6 +14,7 @@ import {
 } from "chart.js";
 import PieChart from "../Charts/PieChart";
 import BarChart from "../Charts/BarChart";
+import { ProgressBar } from "../Charts/ProgressBar";
 
 ChartJS.register(
   CategoryScale,
@@ -147,23 +147,13 @@ const StudentModal = ({ student, isOpen, closeModal }) => {
 
   // Calculate overall marks progress score (average of all marks)
   const marks = Object.values(student?.marks || {});
-  const overallMarksProgress =
-    marks.length > 0
-      ? marks.reduce((total, mark) => total + mark, 0) / marks.length
-      : 0;
 
   // Calculate activity progress for the circular chart (average progress)
   const activityProgress = student?.activity_progress || {};
-  const progressLabels = Object.keys(activityProgress);
+  // const progressLabels = Object.keys(activityProgress);
   const progressData = Object.values(activityProgress).map((val) =>
     parseFloat(val)
   );
-
-  const overallProgress =
-    progressData.length > 0
-      ? progressData.reduce((sum, value) => sum + value, 0) /
-        progressData.length
-      : 0;
 
   return (
     <motion.div
@@ -174,7 +164,7 @@ const StudentModal = ({ student, isOpen, closeModal }) => {
       variants={backdropVariants}
     >
       <motion.div
-        className="relative bg-[#334151] p-6 rounded-xl shadow-lg w-full max-w-5xl mx-4 sm:mx-6 flex flex-col gap-[10px]"
+        className="relative bg-[#334151] p-6 rounded-[20px] shadow-lg w-full max-w-5xl mx-4 sm:mx-6 flex flex-col gap-[16px]"
         variants={modalVariants}
       >
         <button
@@ -201,7 +191,7 @@ const StudentModal = ({ student, isOpen, closeModal }) => {
         >
           {/* Student Info Section */}
           <motion.div
-            className="flex flex-col md:flex-row bg-[#adb3b9] rounded-[12px] p-[10px]"
+            className="flex flex-col md:flex-row bg-[#adb3b9] rounded-[10px] p-[10px]"
             variants={{
               hidden: { opacity: 0 },
               visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -279,63 +269,12 @@ const StudentModal = ({ student, isOpen, closeModal }) => {
           </motion.div>
 
           {/* Overall Performance Section */}
-          <motion.div
-            className="bg-[#adb3b9] rounded-[8px] p-6 flex-col items-center md:block hidden"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { duration: 0.5 } },
-            }}
-          >
-            <h3 className="font-bold text-lg text-center mb-4">
-              Overall Performance
-            </h3>
-            <div className="flex justify-center items-center gap-6">
-              {/* Attendance Circular Progress */}
-              <motion.div
-                className="flex flex-col justify-center items-center"
-                style={{ width: "120px", height: "120px" }}
-              >
-                <CircularProgressbar
-                  value={overallProgress}
-                  text={`${overallProgress.toFixed(1)}%`}
-                  styles={buildStyles({
-                    textColor: "#fff",
-                    pathColor: "#4CAF50",
-                    trailColor: "#D3D3D3",
-                    strokeWidth: 10,
-                    textSize: "16px",
-                    fontWeight: "bold",
-                  })}
-                />
-                <h2 className="text-sm font-semibold mt-2">Attendance</h2>
-              </motion.div>
-
-              {/* Marks Circular Progress */}
-              <motion.div
-                className="flex flex-col justify-center items-center"
-                style={{ width: "120px", height: "120px" }}
-              >
-                <CircularProgressbar
-                  value={overallMarksProgress}
-                  text={`${overallMarksProgress.toFixed(1)}%`}
-                  styles={buildStyles({
-                    textColor: "#fff",
-                    pathColor: "#FF6347",
-                    trailColor: "#D3D3D3",
-                    strokeWidth: 10,
-                    textSize: "16px",
-                    fontWeight: "bold",
-                  })}
-                />
-                <h2 className="text-sm font-semibold mt-2">Marks</h2>
-              </motion.div>
-            </div>
-          </motion.div>
+          <ProgressBar progressData={progressData} marks={marks} />
         </motion.div>
 
         {/* Charts Section */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-[15px]"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-[16px]"
           initial="hidden"
           animate="visible"
           exit="exit"
